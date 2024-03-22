@@ -8,6 +8,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  //Text를 입력받을 때 필요한 컨트롤러
+  TextEditingController introduceController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
-          '맛있는 녹차',
+          '네이티브 개발자 안혜영입니다.',
           style: TextStyle(
             fontSize: 14,
             color: Colors.black,
@@ -29,6 +32,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               margin: EdgeInsets.all(16),
@@ -42,7 +46,9 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
+            //정보 입력
             Container(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               child: Row(
                 children: [
                   Container(
@@ -58,7 +64,104 @@ class _MainScreenState extends State<MainScreen> {
                   )
                 ],
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 150,
+                    child: Text(
+                      '나이',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text(
+                    '100',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 150,
+                    child: Text(
+                      '직업',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text(
+                    '안드로이드 개발자',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 150,
+                    child: Text(
+                      '학교',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text(
+                    'cat school',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 150,
+                    child: Text(
+                      'MBTI',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text(
+                    'AAAA',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: 16,
+                top: 16,
+              ),
+              child: Text(
+                '자기소개 입력',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                child: TextField(
+                  maxLines: 5,
+                  controller: introduceController,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                            color: Color(0xffd9d9d9),
+                          ))),
+                )),
           ],
         ),
       ),
